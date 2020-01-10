@@ -10,32 +10,27 @@ void swap(int *a, int *b)
 
 void bubble_sort(int arr[], int n)
 {
-    for (int i = 0; i < n-1; ++i)
+    if (n <= 1) return;
+
+    for (int i = 0; i < n; ++i)
     {
-        for (int j = i; j < n-1; ++j)
+        bool flag = false;
+        for (int j = 0; j < n-i-1; ++j)
         {
             if (arr[j] > arr[j+1])
             {
                swap(&arr[j], &arr[j+1]);
+               flag = true;
             }
         }
-    }
 
+        if (!flag) break;
+    }
 }
 
 void printArray(int arr[], int n)
 {
     for (int i = 0; i < n; ++i) {
-        std::cout << "%d "<< arr[i];
+        std::cout << " " << arr[i];
     }
-}
-
-int main()
-{
-    int arr[] = {64, 25, 12, 22, 11};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	bubble_sort(arr, n);
-	std::cout << "Sorted array:";
-	printArray(arr, n);
-    return 0;
 }
