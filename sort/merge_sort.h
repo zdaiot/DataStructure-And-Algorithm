@@ -1,0 +1,8 @@
+#ifndef DATASTRUCTURE_AND_ALGORITHM_MERGE_SORT_H
+#define DATASTRUCTURE_AND_ALGORITHM_MERGE_SORT_H
+
+#include <vector>
+
+void merge_sort(std::vector<int> &arr);
+
+#endif //DATASTRUCTURE_AND_ALGORITHM_MERGE_SORT_H
