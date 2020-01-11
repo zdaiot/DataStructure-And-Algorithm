@@ -1,13 +1,7 @@
 // CPP program for implementation of bubble sort
 #include <iostream>
 #include "bubble_sort.h"
-
-void swap(int *a, int *b)
-{
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
+#include "../utils/utils.h"
 
 void bubble_sort(int arr[], int n)
 // 借助C语言的数组实现

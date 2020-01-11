@@ -1,4 +1,4 @@
 CPP code for DataStructure And Algorithm
 
 ## Sort Algorithm
-[bubble_sort](bubble_sort)
+[bubble_sort](sort/bubble_sort.cpp)
