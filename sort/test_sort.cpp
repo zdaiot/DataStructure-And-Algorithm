@@ -45,9 +45,21 @@ void test_sort()
 	std::cout << "Sorted array use quick sort:";
 	printVector(arr_quick);
 
-    // 测试quick_sort函数
+    // 测试counting_sort函数
 	std::vector<int> arr_counting{64, 25, 12, 22, 11};
 	counting_sort(arr_counting);
 	std::cout << "Sorted array use counting sort:";
 	printVector(arr_counting);
+
+    // 测试shell_sort函数
+	std::vector<int> arr_shell{64, 25, 12, 22, 11};
+	shell_sort(arr_shell);
+	std::cout << "Sorted array use shell sort:";
+	printVector(arr_shell);
+
+    // 测试bucket_sort函数
+	std::vector<int> arr_bucket{64, 25, 12, 22, 11};
+	bucket_sort(arr_bucket);
+	std::cout << "Sorted array use bucket sort:";
+	printVector(arr_bucket);
 }
