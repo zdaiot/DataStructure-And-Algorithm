@@ -44,4 +44,10 @@ void test_sort()
 	quick_sort(arr_quick);
 	std::cout << "Sorted array use quick sort:";
 	printVector(arr_quick);
+
+    // 测试quick_sort函数
+	std::vector<int> arr_counting{64, 25, 12, 22, 11};
+	counting_sort(arr_counting);
+	std::cout << "Sorted array use counting sort:";
+	printVector(arr_counting);
 }
