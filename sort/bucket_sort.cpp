@@ -13,14 +13,12 @@ void bucket_sort(vector<int>& arr) {
     // 计算桶的个数
     int count = (maxV - minV + 1);
     int bucketSize = (count%inter==0)?(count/inter):(count/inter+1);
-    vector<vector<int>> buckets;
+    vector<vector<int>> buckets(bucketSize, vector<int>());
 
     // 划分到不同的桶中
     for(auto & num: arr) {
         int quotient = (num-minV)/inter;
-        if(buckets.size() < quotient)
-            buckets.push_back(vector<int> ());
-        buckets[quotient-1].push_back(num);
+        buckets[quotient].push_back(num);
     }
 
     int cur = 0;
