@@ -7,3 +7,6 @@ DataStructure_And_Algorithm.cbp
 Makefile
 /DataStructure_And_Algorithm
 /CMakeCache.txt
+.DS_store
+.cmake
+Testing

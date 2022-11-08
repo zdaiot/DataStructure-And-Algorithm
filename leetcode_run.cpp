@@ -3,30 +3,43 @@
 //
 
 #include "leetcode_run.h"
+using namespace std;
 
 class Solution {
-public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::unordered_map<int, int> m;
-        std::vector<int> res;
-        for(int i=0; i<=nums.size(); i++) {
-            int ano = target - nums[i];
-            if(m.count(ano)>0) {
-                res.push_back(m[target-nums[i]]);
-                res.push_back(i);
-                // return res;
+private:
+    int minArrayCore(vector<int>& numbers, int s, int e) {
+        if(e == s)
+            return numbers[e];
+        int mid = (s+e) / 2;
+        if(numbers[mid] == numbers[e]) {
+            int res = 5001;
+            for(int i=s; i<=e; i++) {
+                if(numbers[i] < res)
+                    res = numbers[i];
             }
-            m[nums[i]] = i;
+            return res;
         }
+        else if(numbers[mid] > numbers[e])
+            return minArrayCore(numbers, mid+1, e);
+        else
+            return minArrayCore(numbers, s, mid);
+    }
+public:
+    int minArray(vector<int>& numbers) {
+        int res = minArrayCore(numbers, 0, numbers.size()-1);
         return res;
     }
 };
 
 void leetcode_run() {
-    std::vector<int> nums = { 2, 7, 11, 15};
-    int target = 9;
+    // ListNode* head = createLinkedList("[1,2,3,4,5]");
+    // TreeNode* root = createTree("[1,2,3,null,null,4,5]");
+
     Solution* solu = new Solution();
-    std::vector<int> res = solu->twoSum(nums, target);
-    for (auto i : res)
-        std::cout << i << ' ';
+
+    std::vector<int> preorder = {7,8,9,1,2,3,4,5,6};
+    std::vector<int> inorder = {4,9,8,3,15,20,7};
+
+    auto res = solu->minArray(preorder);
+    std::cout << res << endl;
 }
