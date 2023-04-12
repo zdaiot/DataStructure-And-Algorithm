@@ -7,27 +7,20 @@ using namespace std;
 
 class Solution {
 private:
-    int minArrayCore(vector<int>& numbers, int s, int e) {
-        if(e == s)
-            return numbers[e];
-        int mid = (s+e) / 2;
-        if(numbers[mid] == numbers[e]) {
-            int res = 5001;
-            for(int i=s; i<=e; i++) {
-                if(numbers[i] < res)
-                    res = numbers[i];
-            }
-            return res;
-        }
-        else if(numbers[mid] > numbers[e])
-            return minArrayCore(numbers, mid+1, e);
-        else
-            return minArrayCore(numbers, s, mid);
+    double myPowPos(double x, int n) {
+        if(n == 0)
+            return 1;
+        double res = x * myPowPos(x, n-1);
+        return res;
     }
 public:
-    int minArray(vector<int>& numbers) {
-        int res = minArrayCore(numbers, 0, numbers.size()-1);
-        return res;
+    double myPow(double x, int n) {
+        if(x == 0)
+            return 0;
+        if(n > 0)
+            return myPowPos(x, n);
+        else
+            return 1/myPowPos(x, -n);
     }
 };
 
@@ -40,6 +33,9 @@ void leetcode_run() {
     std::vector<int> preorder = {7,8,9,1,2,3,4,5,6};
     std::vector<int> inorder = {4,9,8,3,15,20,7};
 
-    auto res = solu->minArray(preorder);
+    vector<vector<char>> board = {{'a', 'b'},{'c', 'd'}};
+    string word = "hello";
+
+    auto res = solu->myPow(0.00001, 2147483647);
     std::cout << res << endl;
 }
