@@ -1,5 +1,6 @@
 /cmake-build-debug/
 .idea/
+.vscode
 /CMakeFiles/
 cmake_install.cmake
 DataStructure_And_Algorithm.cbp
