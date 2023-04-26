@@ -9,6 +9,7 @@
 #include "iostream"
 #include "utils/tree.h"
 #include "utils/linked_list.h"
+#include "utils/utils.h"
 #include "unordered_map"
 void leetcode_run();
 #endif //DATASTRUCTURE_AND_ALGORITHM_LEETCODE_RUN_H
