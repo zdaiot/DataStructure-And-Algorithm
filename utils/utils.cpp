@@ -18,6 +18,12 @@ void printVector(std::vector<int> &arr)
     std::cout << std::endl;
 }
 
+void printVectorVector(std::vector<std::vector<int>> &arr) {
+    int n = arr.size();
+    for(int i =0; i < n; i++)
+        printVector(arr[i]);
+}
+
 void swap(int *a, int *b)
 {
     int tmp = *a;
